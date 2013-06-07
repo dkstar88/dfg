@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="Fileman">
+  <variable name="StopSearch" type="Boolean" />
+  <function name="GetLongPathName" visibility="public">
+    <parameters>
+      <parameter name="ShortName" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="GetWinVersion" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="IsWindowsVista" visibility="public">
+    <parameters>
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="FormattedVersion" visibility="public">
+    <parameters>
+      <parameter name="AVersion" type="tagVS_FIXEDFILEINFO" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="RemoveEmptyDirs" visibility="public">
+    <parameters>
+      <parameter name="ADirectory" type="string" />
+    </parameters>
+  </procedure>
+  <function name="LocalSettings" visibility="public">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="ShlExec" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ShlExec" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <parameter name="AParam" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="RunAs" visibility="public">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <parameter name="AParam" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ShlExec" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <parameter name="AParam" type="string" />
+      <parameter name="AWait" type="Boolean" />
+      <parameter name="AWorkDir" type="string">
+        <value>
+          
+        </value>
+      </parameter>
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="fileExec" visibility="public">
+    <parameters>
+      <parameter name="aCmdLine" type="string" paramflags="const" />
+      <parameter name="aHide" type="Boolean" />
+      <parameter name="aWait" type="Boolean" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="WaitForFileLock" visibility="public">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <parameter name="ATimeoutSec" type="Integer" paramflags="const">
+        <value>
+          $3E8
+        </value>
+      </parameter>
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="CreateEmptyFile" visibility="public">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ShortPathName" visibility="public">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="GetFilterFileMask" visibility="public">
+    <parameters>
+      <parameter name="AFilter" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="FilterStringToStrings" visibility="public">
+    <parameters>
+      <parameter name="AFilter" type="string" />
+      <parameter name="AStrings" type="TStrings" />
+      <parameter name="AMasks" type="TStrings" />
+    </parameters>
+  </procedure>
+  <function name="NewTempFilename" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="NewTempFile" visibility="public">
+    <parameters>
+      <parameter name="AtDir" type="string" />
+      <parameter name="AExt" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="CleanupTemp" visibility="public">
+  </procedure>
+  <function name="DriveFree" visibility="public">
+    <parameters>
+      <parameter name="C" type="Char" />
+      <retval type="Int64" />
+    </parameters>
+  </function>
+  <function name="EngFileSize" visibility="public">
+    <parameters>
+      <parameter name="ASize" type="Int64" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="EngFileSizeF" visibility="public">
+    <parameters>
+      <parameter name="ASize" type="Real" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="SearchFind" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" paramflags="const" />
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="RelativeDir" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" />
+      <parameter name="APath" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="FileSize" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="TFileName" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="FileTimeToDateTime" visibility="public">
+    <parameters>
+      <parameter name="FileTime" type="_FILETIME" />
+      <retval type="TDateTime" />
+    </parameters>
+  </function>
+  <function name="FileLastWrite" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="_FILETIME" />
+    </parameters>
+  </function>
+  <function name="FileUpdateTime" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="TDateTime" />
+    </parameters>
+  </function>
+  <function name="GetFmtFileVersion" visibility="public">
+    <parameters>
+      <parameter name="FileName" type="string" paramflags="const">
+        <value>
+          
+        </value>
+      </parameter>
+      <parameter name="Fmt" type="string" paramflags="const">
+        <value>
+          %%d.%%d.%%d.%%d
+        </value>
+      </parameter>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="GetVersionInfo" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Filename" type="string" />
+      <retval type="tagVS_FIXEDFILEINFO" />
+    </parameters>
+  </function>
+  <function name="GetVersionInfo" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="Filename" type="string" paramflags="const" />
+      <parameter name="VersionInfo" type="tagVS_FIXEDFILEINFO" paramflags="var" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="FileDateTime" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="TDateTime" />
+    </parameters>
+  </function>
+  <procedure name="SearchFileExt" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" paramflags="const" />
+      <parameter name="Ext" type="string" paramflags="const" />
+      <parameter name="Files" type="TStrings" />
+      <parameter name="SubDir" type="Boolean" />
+    </parameters>
+  </procedure>
+  <function name="FilenameOnly" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DirUp" visibility="public">
+    <parameters>
+      <parameter name="Directory" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="AppPath" visibility="public" procflags="overload">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="AppPath" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AFilename" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="TmpDir" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="ExtractFilepath" visibility="public">
+    <parameters>
+      <parameter name="Filename" type="TFileName" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="LastDir" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="AppExe" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="GetWinDir" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="GetSysDir" visibility="public">
+    <parameters>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="CreateDirs" visibility="public">
+    <parameters>
+      <parameter name="Dirs" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="formFilename" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" paramflags="const" />
+      <parameter name="Filename" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="TestWrite" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="DirExists" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" paramflags="const" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="ChangeFilename" visibility="public">
+    <parameters>
+      <parameter name="AOriginal" type="string" />
+      <parameter name="AFilename" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="DuplicateFile" visibility="public">
+    <parameters>
+      <parameter name="AOriginal" type="string" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="GetLongPathNameA" visibility="public" callconv="stdcall">
+    <parameters>
+      <parameter name="ShortPathName" type="PAnsiChar" />
+      <parameter name="LongPathName" type="PAnsiChar" />
+      <parameter name="cchBuffer" type="Integer" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+</namespace>

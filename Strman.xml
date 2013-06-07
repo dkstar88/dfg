@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="StrMan">
+  <set name="TCharSet" type="Char" />
+  <const name="Decimals" type="Set">
+    <value>
+      ['0'..'9']
+    </value>
+  </const>
+  <const name="FloatNums" type="Set">
+    <value>
+      ['.','0'..'9']
+    </value>
+  </const>
+  <const name="Operators" type="Set">
+    <value>
+      ['*'..'+','-','/']
+    </value>
+  </const>
+  <const name="HexDecimals" type="Set">
+    <value>
+      ['0'..'9','A'..'F']
+    </value>
+  </const>
+  <const name="Letters" type="Set">
+    <value>
+      ['A'..'Z','a'..'z']
+    </value>
+  </const>
+  <const name="Symbols" type="Set">
+    <value>
+      ['"','''..')',',','<','>','[',']','{','}']
+    </value>
+  </const>
+  <const name="Masks" type="Array" visibility="public" />
+  <function name="strAddSlash" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="strDelSlash" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="ChopStrings" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AStr" type="string" />
+      <parameter name="AChunkSize" type="Integer" />
+      <parameter name="AOut" type="TStrings" />
+    </parameters>
+  </procedure>
+  <procedure name="ChopStrings" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AStr" type="WideString" />
+      <parameter name="AChunkSize" type="Integer" />
+      <parameter name="AOut" type="TStrings" />
+    </parameters>
+  </procedure>
+  <function name="StrBrief" visibility="public">
+    <parameters>
+      <parameter name="AString" type="string" />
+      <parameter name="AMaxChar" type="Integer" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="AddSlashes" visibility="public">
+    <parameters>
+      <parameter name="AString" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="AddSlashesExt" visibility="public">
+    <parameters>
+      <parameter name="AString" type="string" />
+      <parameter name="Targets">
+        <array name="Targets">
+          <element type="Char" />
+        </array>
+      </parameter>
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="StripSlashes" visibility="public">
+    <parameters>
+      <parameter name="AString" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="JoinStrings" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="AStrings" type="TStrings" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="JoinStrings" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="strings" type="TStrings" />
+      <parameter name="delimiter" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="strFileLoad" visibility="public">
+    <parameters>
+      <parameter name="aFile" type="string" paramflags="const" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="strFileSave" visibility="public">
+    <parameters>
+      <parameter name="aFile" type="string" paramflags="const" />
+      <parameter name="aString" type="string" paramflags="const" />
+    </parameters>
+  </procedure>
+  <procedure name="RemoveQuate" visibility="public">
+    <parameters>
+      <parameter name="Src" type="string" paramflags="var" />
+    </parameters>
+  </procedure>
+  <function name="ReadBetween" visibility="public">
+    <parameters>
+      <parameter name="Src" type="WideString" />
+      <parameter name="Mark1" type="WideString" />
+      <parameter name="Mark2" type="WideString" />
+      <retval type="WideString" />
+    </parameters>
+  </function>
+  <function name="LastDir" visibility="public">
+    <parameters>
+      <parameter name="Dir" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="SplitStrC" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <parameter name="C" type="Char" />
+      <parameter name="head" type="string" paramflags="var" />
+      <parameter name="queue" type="string" paramflags="var" />
+    </parameters>
+  </procedure>
+  <procedure name="Split" visibility="public">
+    <parameters>
+      <parameter name="StringList" type="TStringList" />
+      <parameter name="S" type="string" />
+      <parameter name="C" type="Char" />
+    </parameters>
+  </procedure>
+  <function name="ReturnLine" visibility="public">
+    <parameters>
+      <parameter name="SList" type="TStringList" />
+      <parameter name="Find" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="EStrToFloat" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <retval type="Real" />
+    </parameters>
+  </function>
+  <function name="EStrToInt" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="RemoveChars" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <parameter name="C" type="TCharSet" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="ReplaceOne" visibility="public">
+    <parameters>
+      <parameter name="Src" type="string" />
+      <parameter name="Ch" type="string" />
+      <parameter name="iStart" type="Integer" />
+      <parameter name="iCount" type="Integer" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="Instr" visibility="public">
+    <parameters>
+      <parameter name="iStart" type="Integer" />
+      <parameter name="Src" type="string" />
+      <parameter name="Find" type="string" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="LeftStr" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <parameter name="ToPos" type="Integer" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="RightStr" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <parameter name="ToPos" type="Integer" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <procedure name="StrSplit" visibility="public">
+    <parameters>
+      <parameter name="SrcStr" type="string" />
+      <parameter name="BreakDownPos" type="Integer" />
+      <parameter name="S1" type="string" paramflags="var" />
+      <parameter name="S2" type="string" paramflags="var" />
+    </parameters>
+  </procedure>
+  <function name="ReplaceAll" visibility="public">
+    <parameters>
+      <parameter name="Source" type="string" />
+      <parameter name="Target" type="string" />
+      <parameter name="ChangeTo" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="LoCase" visibility="public">
+    <parameters>
+      <parameter name="C" type="Char" />
+      <retval type="Char" />
+    </parameters>
+  </function>
+  <function name="LowCaseStr" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="TitleCase" visibility="public">
+    <parameters>
+      <parameter name="SourceStr" type="string" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="FillStr" visibility="public">
+    <parameters>
+      <parameter name="Amount" type="Byte" />
+      <parameter name="C" type="Char" />
+      <retval type="string" />
+    </parameters>
+  </function>
+  <function name="CompareStrAry" visibility="public">
+    <parameters>
+      <parameter name="Source" type="string" />
+      <parameter name="CmpTo">
+        <array name="CmpTo">
+          <element type="string" />
+        </array>
+      </parameter>
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="RPos" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="C" type="string" />
+      <parameter name="Src" type="string" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="RPos" visibility="public" procflags="overload">
+    <parameters>
+      <parameter name="C" type="string" />
+      <parameter name="Src" type="string" />
+      <parameter name="nStart" type="Integer" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+  <function name="CharCount" visibility="public">
+    <parameters>
+      <parameter name="S" type="string" />
+      <parameter name="C" type="Char" />
+      <retval type="Integer" />
+    </parameters>
+  </function>
+</namespace>
